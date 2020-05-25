@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo right">Rotas IFTM</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li routerLinkActive="active" *ngIf="!isAuth()"><a routerLink="/login">Login</a></li>
+      <li routerLinkActive="active" *ngIf="isAuth()"><a routerLink="/alunos">Alunos</a></li>
+      <li routerLinkActive="active" *ngIf="isAuth()"><a routerLink="/cursos">Cursos</a></li>
+      <li routerLinkActive="active" *ngIf="isAuth()"><a (click)="onLogout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
